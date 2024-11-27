@@ -5,7 +5,7 @@ class Library:
         self.books = []
 
     def add_book(self, title, author, year):
-       # Добавляет книгу в библиотеку
+       # Добавляет книгу в библиотеку.
         book = {
             "id": str(uuid.uuid4()),
             "title": title,

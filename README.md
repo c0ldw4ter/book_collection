@@ -1,2 +1,1 @@
-# book_collection
-branch develop
+# Book library on python + postgresql

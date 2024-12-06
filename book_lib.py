@@ -18,7 +18,7 @@ class Library:
         # Создает таблицу книг, если она еще не существует
         with self.connection.cursor() as cursor:
             cursor.execute("""
-            CREATE TABLE IF NOT EXISTS booksdb (
+            CREATE TABLE IF NOT EXISTS books (
                 id SERIAL PRIMARY KEY,
                 title VARCHAR(255) NOT NULL,
                 author VARCHAR(255) NOT NULL,

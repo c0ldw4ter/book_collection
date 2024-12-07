@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Список библиотек</title>
+	</head>
+	<body>
+		<h1>Список книг</h1>
+		<form action="/add/" method="post">
+			{% csrf_token %}
+			<label for="book">Книга:</label>
+			<input type="text" id="book" name="book" required />
+			<label for="book">Автор:</label>
+			<input type="text" id="book" name="book" required />
+			<label for="date">Дата:</label>
+			<input type="date" id="date" name="date" required />
+			<button type="submit">Добавить книгу</button>
+		</form>
+		<ul>
+			{% for book in books %}
+			<li>
+				{{ book.book }} : {{ book.date|date:"d.m.Y" }}
+				<a href="{% url 'delete' book.pk %}">Удалить</a>
+				<a href="{% url 'edit' book.pk %}">Изменить</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</body>
+</html>

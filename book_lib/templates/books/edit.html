@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Изменение данных</title>
+	</head>
+	<body>
+		<h1>Изменение данных</h1>
+		<form action="{% url 'edit' book.id %}" method="post">
+			{% csrf_token %}
+			<label for="id_book" required>Книга:</label>
+			{{ form.book }}
+			<label for="id_date">Дата:</label>
+			{{ form.date }}
+			<input type="submit" value="Сохранить" />
+		</form>
+	</body>
+</html>
